@@ -32,6 +32,15 @@ How they were made, from the phone originals in `temp/` (kept out of the repo by
 without the phone number, since this page is public, and with this site's
 address added to the header. Regenerate it whenever the main CV changes.
 
+## Link preview and icon
+
+- `og.png` (1200x630) is the card a link to the site shows on LinkedIn, in email and
+  in chat. Its source is `_source/og-card.html`; folders starting with `_` are not
+  published by GitHub Pages. The render command is at the top of that file.
+- `favicon.svg` is the tab icon.
+- LinkedIn caches previews. After changing the card, paste the address into
+  LinkedIn's Post Inspector (linkedin.com/post-inspector) to refresh it.
+
 ## Publishing
 
 1. Create a **public** repository named exactly `shashikumars.github.io`.

@@ -3,11 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shashi Kumar S</title>
-<meta name="description" content="Senior software engineer. I build products end to end and run them in production: backends, mobile apps, and the small devices that talk to them.">
-<meta property="og:title" content="Shashi Kumar S, senior software engineer">
-<meta property="og:description" content="hejje, PurePay, an ESP32 e-ink desk clock, and how I build with AI coding agents.">
+<title>Shashi Kumar S · Senior Software Engineer</title>
+<meta name="description" content="Senior software engineer with 11 years of building products end to end: hejje, PurePay, an ESP32 e-ink desk clock, and how I build with AI coding agents.">
+<link rel="canonical" href="https://shashikumars.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="author" content="Shashi Kumar S">
+<!-- The link preview on LinkedIn, in email and in chat. Scrapers need absolute
+     URLs. Source of og.png: _source/og-card.html. -->
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://shashikumars.github.io/">
+<meta property="og:site_name" content="Shashi Kumar S">
+<meta property="og:title" content="Shashi Kumar S · Senior Software Engineer">
+<meta property="og:description" content="11 years of building products end to end: hejje, PurePay, an ESP32 e-ink desk clock, and how I build with AI coding agents.">
+<meta property="og:image" content="https://shashikumars.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shashi Kumar S, senior software engineer, with photos of an e-ink desk clock">
+<meta name="twitter:card" content="summary_large_image">
 <!--
   Personal portfolio, served by GitHub Pages from the shashikumars.github.io repo.
   One file, no build step, no web fonts, no scripts, no trackers.
@@ -114,6 +126,10 @@
   .role { font-weight: 600; }
   .timeline p { color: var(--muted); margin: 2px 0 0; }
 
+  .stack { display: grid; grid-template-columns: 210px 1fr; gap: 10px 20px; margin: 0; }
+  .stack dt { font-weight: 600; }
+  .stack dd { margin: 0; color: var(--muted); }
+
   footer { max-width: 860px; margin: 0 auto; padding: 24px 20px 56px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); }
 
   @media (max-width: 600px) {
@@ -123,6 +139,8 @@
     .project, .ai { padding: 20px; }
     .media { grid-template-columns: 1fr; }
     .screens { gap: 8px; }
+    .stack { grid-template-columns: 1fr; gap: 2px; }
+    .stack dd { margin-bottom: 12px; }
   }
 </style>
 </head>
@@ -131,7 +149,7 @@
 
 <header>
   <h1>Shashi Kumar S</h1>
-  <p class="lead">Senior software engineer. I build products end to end and run them in production: backends, mobile apps, and lately the small devices that talk to them.</p>
+  <p class="lead">Senior software engineer with 11 years of building products end to end and running them in production: backends, mobile apps, and lately the small devices that talk to them.</p>
   <p class="meta">Mysuru, India · Open to relocating to Norway and the Nordics</p>
   <nav class="links" aria-label="Contact and profiles">
     <a class="primary" href="cv/Shashi_Kumar_S_CV.pdf">CV (PDF)</a>
@@ -278,7 +296,16 @@
     <p>2015 to 2019 · Taskera: a project management platform, and the company's server fleet, built and run from bare metal.</p>
   </li>
 </ul>
-<p class="meta" style="margin-top: 4px">The full story, with education, is in the <a href="cv/Shashi_Kumar_S_CV.pdf">CV</a>.</p>
+<h2>Tech I work with</h2>
+
+<dl class="stack">
+  <dt>Hands-on</dt><dd>PHP, MySQL, JavaScript, Vue.js, Dart and Flutter, SQL, shell scripting</dd>
+  <dt>Operations</dt><dd>Linux, Apache, systemd, TLS, backups and recovery, Cloudflare, incident debugging</dd>
+  <dt>Security</dt><dd>End-to-end encryption, key management and recovery, signed APIs, security audits</dd>
+  <dt>Through AI coding agents</dt><dd>Go, Kotlin and Jetpack Compose, Swift and SwiftUI, C# and WinUI 3, C++ on the ESP32</dd>
+</dl>
+
+<p class="meta" style="margin-top: 28px">The full story, with education, is in the <a href="cv/Shashi_Kumar_S_CV.pdf">CV</a>.</p>
 
 </main>
 
