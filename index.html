@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shashi Kumar S</title>
+<meta name="description" content="Senior software engineer. I build products end to end and run them in production: backends, mobile apps, and the small devices that talk to them.">
+<meta property="og:title" content="Shashi Kumar S, senior software engineer">
+<meta property="og:description" content="hejje, PurePay, an ESP32 e-ink desk clock, and how I build with AI coding agents.">
+<meta property="og:type" content="website">
+<!--
+  Personal portfolio, served by GitHub Pages from the shashikumars.github.io repo.
+  One file, no build step, no web fonts, no scripts, no trackers.
+
+  Media lives in media/: phone photos resized to 1600 px with their GPS data
+  stripped, and videos re-encoded to short 720p clips with no sound. Videos show
+  a poster frame and load only when played. The originals stay in temp/, which
+  .gitignore keeps out of the repo.
+
+  The CV link points at cv/Shashi_Kumar_S_CV.pdf, a copy of the CV without the
+  phone number, since this page is public.
+-->
+<style>
+  :root {
+    --bg: #fbfbfa;
+    --surface: #ffffff;
+    --text: #1d2125;
+    --muted: #5b636b;
+    --border: #e3e6e8;
+    --accent: #1d4e89;
+    --accent-soft: #e8eef6;
+    --tag: #eef1f4;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111316;
+      --surface: #181b1f;
+      --text: #e6e8ea;
+      --muted: #9aa3ac;
+      --border: #2a2f35;
+      --accent: #8db8f2;
+      --accent-soft: #1b2738;
+      --tag: #22272d;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111316; --surface: #181b1f; --text: #e6e8ea; --muted: #9aa3ac;
+    --border: #2a2f35; --accent: #8db8f2; --accent-soft: #1b2738; --tag: #22272d;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 56px 20px 40px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1 { font-size: 40px; line-height: 1.15; margin: 0; letter-spacing: -0.5px; }
+  h2 {
+    font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--muted); margin: 64px 0 20px;
+  }
+  h3 { font-size: 22px; line-height: 1.3; margin: 0; }
+  p { margin: 0 0 12px; }
+  ul { margin: 12px 0 0; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+
+  .lead { font-size: 20px; line-height: 1.5; margin: 16px 0 10px; max-width: 680px; }
+  .meta { color: var(--muted); margin: 0; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .links a {
+    padding: 8px 16px; border: 1px solid var(--border); border-radius: 999px;
+    background: var(--surface); color: var(--text); font-size: 15px;
+  }
+  .links a.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
+  .links a:hover { text-decoration: none; border-color: var(--accent); }
+
+  .project {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px; margin-bottom: 24px;
+  }
+  .project-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
+  .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
+  .what { color: var(--muted); margin: 4px 0 16px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; padding: 0; list-style: none; }
+  .tags li { margin: 0; padding: 2px 10px; border-radius: 999px; background: var(--tag); font-size: 13px; color: var(--muted); }
+  .project-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 16px; font-size: 15px; font-weight: 600; }
+  .note { font-size: 14px; color: var(--muted); margin-top: 12px; }
+
+  .screens { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 4px 0 8px; }
+  .screens img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border); display: block; }
+
+  .media { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 4px 0 8px; }
+  /* height:auto keeps the width/height attributes for layout before load
+     without letting the declared height stretch the picture */
+  .media img, .media video { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); display: block; background: var(--tag); }
+  .media figure, .screens figure { margin: 0; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+
+  .ai { background: var(--accent-soft); border-radius: 16px; padding: 28px; }
+  .ai p:last-child { margin-bottom: 0; }
+
+  .timeline { list-style: none; padding: 0; margin: 0; }
+  .timeline > li { padding: 0 0 20px 22px; border-left: 2px solid var(--border); position: relative; margin: 0; }
+  .timeline > li::before {
+    content: ""; position: absolute; left: -7px; top: 7px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--surface); border: 2px solid var(--accent);
+  }
+  .role { font-weight: 600; }
+  .timeline p { color: var(--muted); margin: 2px 0 0; }
+
+  footer { max-width: 860px; margin: 0 auto; padding: 24px 20px 56px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) {
+    main { padding-top: 36px; }
+    h1 { font-size: 32px; }
+    .lead { font-size: 18px; }
+    .project, .ai { padding: 20px; }
+    .media { grid-template-columns: 1fr; }
+    .screens { gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Shashi Kumar S</h1>
+  <p class="lead">Senior software engineer. I build products end to end and run them in production: backends, mobile apps, and lately the small devices that talk to them.</p>
+  <p class="meta">Mysuru, India · Open to relocating to Norway and the Nordics</p>
+  <nav class="links" aria-label="Contact and profiles">
+    <a class="primary" href="cv/Shashi_Kumar_S_CV.pdf">CV (PDF)</a>
+    <a href="https://linkedin.com/in/shashikumar3">LinkedIn</a>
+    <a href="https://github.com/shashikumars">GitHub</a>
+    <a href="mailto:shashikumar0390@gmail.com">Email</a>
+  </nav>
+</header>
+
+<h2>Selected work</h2>
+
+<article class="project" id="hejje">
+  <div class="project-head">
+    <h3>hejje</h3>
+    <span class="when">2026 · my own product</span>
+  </div>
+  <p class="what">A privacy-first fitness tracker for running, the gym, food and weight. Live on Google Play and the App Store.</p>
+
+  <div class="screens">
+    <figure><img src="media/route.webp" alt="hejje feed with a strength session and a run on a map" loading="lazy" width="540" height="960"></figure>
+    <figure><img src="media/strength.webp" alt="hejje strength analytics with lift progress" loading="lazy" width="540" height="960"></figure>
+    <figure><img src="media/nutrition.webp" alt="hejje nutrition tracking" loading="lazy" width="540" height="960"></figure>
+  </div>
+
+  <p>I founded and built hejje alone in four months. Everything you log is encrypted on the phone before it syncs, so the server stores data it cannot open, and the whole app works offline.</p>
+  <ul>
+    <li>A Go backend I run in production: JSON REST API, signed requests, rate limiting, separate dev and prod, nightly backups.</li>
+    <li>End-to-end encryption with a recovery key, and a sync protocol that converges after offline edits.</li>
+    <li>Native apps in Kotlin and Jetpack Compose on Android and SwiftUI on iOS, plus a Windows companion app.</li>
+    <li>Offline maps the server cuts for any of 34,000 cities on demand, and Kaya, an assistant that answers questions about your training on the device.</li>
+  </ul>
+  <ul class="tags"><li>Go</li><li>Kotlin</li><li>SwiftUI</li><li>End-to-end encryption</li><li>Linux ops</li></ul>
+  <div class="project-links">
+    <a href="https://hejje.app">hejje.app</a>
+    <a href="https://play.google.com/store/apps/details?id=app.hejje">Google Play</a>
+    <a href="https://apps.apple.com/app/hejje/id6797561942">App Store</a>
+    <a href="https://hejje.app/blog/what-our-server-can-see.html">Blog: What our server can actually see</a>
+  </div>
+</article>
+
+<article class="project" id="eink">
+  <div class="project-head">
+    <h3>E-ink desk clock and photo frame</h3>
+    <span class="when">2026 · personal</span>
+  </div>
+  <p class="what">An ESP32-S3 driving a 7.5-inch black, white and red e-paper panel, in a 3D-printed case.</p>
+
+  <div class="media">
+    <figure>
+      <img src="media/eink-desk.jpg" alt="The e-ink clock in its black 3D-printed case, showing a full-screen analog face with the date and temperature" loading="lazy" width="1600" height="902">
+      <figcaption>The full-screen analog face, in its 3D-printed case.</figcaption>
+    </figure>
+    <figure>
+      <video controls muted playsinline preload="none" poster="media/eink-refresh.jpg" width="1280" height="720">
+        <source src="media/eink-refresh.mp4" type="video/mp4">
+      </video>
+      <figcaption>A full colour refresh: the panel clears, draws black, then adds red.</figcaption>
+    </figure>
+    <figure>
+      <img src="media/eink-photo.jpg" alt="The clock in photo-frame mode, showing a dithered black-and-white photo of a tree" loading="lazy" width="1600" height="902">
+      <figcaption>Photo-frame mode: a picture uploaded from a phone and converted in the browser.</figcaption>
+    </figure>
+    <figure>
+      <img src="media/eink-build.jpg" alt="The first working build: an ESP32 board wired with jumper cables to the e-paper driver board, the panel showing time, date and weather" loading="lazy" width="1600" height="902">
+      <figcaption>The first working build, wired with jumpers before the case.</figcaption>
+    </figure>
+  </div>
+
+  <ul>
+    <li>A fast partial refresh redraws only the clock digits every minute, without the flash; a full colour refresh redraws everything every 30 minutes.</li>
+    <li>Weather and a three-day forecast from Open-Meteo, sunrise and sunset, and a dark theme after sunset.</li>
+    <li>Wi-Fi setup through a captive portal, firmware updates over the air, and a local dashboard with plugins: clock, photo, and a live solar system.</li>
+    <li>A probe page that shows whether a wire touches power, ground or nothing, for debugging the build.</li>
+    <li>Ready for a temperature and humidity sensor and a battery, with a deep-sleep battery mode next.</li>
+  </ul>
+  <p class="note">Firmware (C++, PlatformIO) written by directing AI coding agents; I chose the hardware, wired and assembled it.</p>
+  <ul class="tags"><li>ESP32-S3</li><li>E-paper</li><li>C++</li><li>PlatformIO</li><li>OTA updates</li></ul>
+  <div class="project-links"><a href="https://github.com/shashikumars/eink-desk-clock">Code, wiring and case on GitHub</a></div>
+</article>
+
+<article class="project" id="wled">
+  <div class="project-head">
+    <h3>WLED LED sync</h3>
+    <span class="when">personal</span>
+  </div>
+  <p class="what">An ESP32 running WLED, driving LED strips behind my curtains whose colour follows what is on the monitor.</p>
+  <div class="media">
+    <figure>
+      <video controls muted playsinline preload="none" poster="media/wled.jpg" width="1280" height="720">
+        <source src="media/wled.mp4" type="video/mp4">
+      </video>
+      <figcaption>The strips following the colours on the monitor.</figcaption>
+    </figure>
+    <figure>
+      <img src="media/wled-parts.jpg" alt="Parts laid out on a desk mat: an addressable LED strip reel, a 5 V power supply, an ESP32 board, capacitors and jumper wires" loading="lazy" width="1600" height="902">
+      <figcaption>The parts: LED strip, 5 V power supply, ESP32 and jumpers.</figcaption>
+    </figure>
+  </div>
+  <ul class="tags"><li>ESP32</li><li>WLED</li><li>Addressable LEDs</li></ul>
+</article>
+
+<article class="project" id="purepay">
+  <div class="project-head">
+    <h3>PurePay</h3>
+    <span class="when">2026 · at Hashfoundry, with one colleague</span>
+  </div>
+  <p class="what">A peer-to-peer payments wallet. Live on Google Play, with iOS in App Store review.</p>
+  <ul>
+    <li>The payment flow end to end: scan a QR code, confirm with a transaction PIN, the receiving wallet validates the payment, then receipts and history.</li>
+    <li>Self-custody keys restorable from a 12-word recovery phrase, and the phone's biometric lock on the app.</li>
+    <li>A lightweight KYC check where other users verify a profile's details and issue certificates.</li>
+    <li>Onboarding that needs no crypto, through a relay that sponsors network fees.</li>
+  </ul>
+  <ul class="tags"><li>Payments</li><li>Identity</li><li>Flutter</li><li>Solana</li></ul>
+  <div class="project-links"><a href="https://purepaynetwork.com">purepaynetwork.com</a></div>
+</article>
+
+<h2>How I build with AI coding agents</h2>
+
+<section class="ai">
+  <p>Since mid-2026 I have built everything new by directing AI coding agents (Claude Code). hejje's server and apps and the clock's firmware above were written that way. My part is the part that decides whether the result is any good:</p>
+  <ul>
+    <li><b>Deciding what to build and how it fits together:</b> architecture, data model, protocols and security.</li>
+    <li><b>Reviewing every change</b>, and testing it on real devices before it ships.</li>
+    <li><b>Running it:</b> servers, deploys, backups, store releases and incidents.</li>
+    <li><b>Debugging in the field</b>, from server logs, a user's screen recording, or a probe on a wire.</li>
+  </ul>
+  <p style="margin-top: 14px">It lets one person ship what used to take a team. It does not replace understanding: I can explain every design on this page, and I would be glad to.</p>
+</section>
+
+<h2>Experience</h2>
+
+<ul class="timeline">
+  <li>
+    <div class="role">Senior Software Engineer (Technical Lead) · Hashfoundry Technologies</div>
+    <p>2023 to present · PurePay and Tribex: payments, wallets, invoicing and the encryption under them. Mentored 10+ engineers.</p>
+  </li>
+  <li>
+    <div class="role">Senior Software Engineer · Hashfoundry Technologies</div>
+    <p>2019 to 2023 · Flockbrain: content aggregation with ingestion pipelines, ranking, analytics dashboards and Flutter apps. Mentored 30+ interns and engineers.</p>
+  </li>
+  <li>
+    <div class="role">Member of Technical Staff · Hashfoundry Technologies</div>
+    <p>2015 to 2019 · Taskera: a project management platform, and the company's server fleet, built and run from bare metal.</p>
+  </li>
+</ul>
+<p class="meta" style="margin-top: 4px">The full story, with education, is in the <a href="cv/Shashi_Kumar_S_CV.pdf">CV</a>.</p>
+
+</main>
+
+<footer>
+  Shashi Kumar S · <a href="mailto:shashikumar0390@gmail.com">shashikumar0390@gmail.com</a> · Updated November 2026
+</footer>
+</body>
+</html>
