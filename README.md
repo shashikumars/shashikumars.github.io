@@ -1,7 +1,8 @@
 # shashikumars.github.io
 
 Personal portfolio, served by GitHub Pages at https://shashikumars.github.io.
-One static page (`index.html`): no build step, no web fonts, no scripts, no trackers.
+One static page (`index.html`): no build step, no web fonts, no cookies. The one
+script is the GoatCounter visit counter.
 
 ## Media
 
@@ -40,6 +41,25 @@ address added to the header. Regenerate it whenever the main CV changes.
 - `favicon.svg` is the tab icon.
 - LinkedIn caches previews. After changing the card, paste the address into
   LinkedIn's Post Inspector (linkedin.com/post-inspector) to refresh it.
+
+## Visitor stats
+
+Dashboard: https://shashikumars.goatcounter.com (no cookies, so no consent banner).
+
+Give each application its own link, and its visits show up under that name in the
+dashboard's referrers (GoatCounter reads `?ref=` before the browser's referrer):
+
+| Where the link goes | Link |
+| --- | --- |
+| reMarkable (Arna) | https://shashikumars.github.io/?ref=remarkable |
+| Nordic Semiconductor | https://shashikumars.github.io/?ref=nordic |
+| Spond (Oleg) | https://shashikumars.github.io/?ref=spond |
+| Disruptive Technologies | https://shashikumars.github.io/?ref=disruptive |
+| Veriff | https://shashikumars.github.io/?ref=veriff |
+
+It cannot say who visited, and ad blockers hide some visits, so treat it as a
+rough signal. To stop counting your own visits, open the site once in each of
+your browsers with `#toggle-goatcounter` at the end of the address.
 
 ## Publishing
 
